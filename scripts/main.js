@@ -16,4 +16,16 @@ window.onbeforeunload = () => {
     for (const form of document.getElementsByTagName("form")) {
         form.reset();
     }
+
 };
+
+
+window.addEventListener("load", function () {
+  const audio = document.getElementById("Jokowi.Hebat");
+  if (audio) {
+    audio.muted = false;
+    audio.play().catch(err => {
+      console.log("Autoplay diblokir browser:", err);
+    });
+  }
+});
